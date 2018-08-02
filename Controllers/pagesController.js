@@ -6,14 +6,24 @@
 		$routeProvider
 			// route for the home page
 			.when('/', {
-				templateUrl : 'pages/dashboard.html',
+              
+                controller  : 'mainController'
 			})
 			.when('/students', {
-				templateUrl : 'pages/student.html',
+               
+                controller  : 'studentController'
             })
             .when('/teachers', {
 				templateUrl : 'pages/teacher.html',
 			})
 
-		
+			scotchApp.controller('mainController', function($scope) {
+                // create a message to display in our view
+                $window.location.href = '/pages/dashboard.html';
+            });
+            scotchApp.controller('studentController', function($scope) {
+                // create a message to display in our view
+                $window.location.href = '/pages/student.html';
+            });
+        
 	});
